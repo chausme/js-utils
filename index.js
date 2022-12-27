@@ -1,3 +1,3 @@
-import test from './last.js';
+import test from './first.js';
 
-console.log(test([1, 3, 10]));
+console.log(test({}));
