@@ -11,6 +11,10 @@
         {
             "files": ".eslintrc.json",
             "options": { "parser": "json" }
+        },
+        {
+            "files": "*.md",
+            "options": { "parser": "markdown" }
         }
     ]
 }

@@ -1,3 +1,1 @@
-import test from './first.js';
-
-console.log(test({}));
+import test from './range.js';
