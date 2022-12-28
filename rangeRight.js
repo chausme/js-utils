@@ -5,7 +5,11 @@ const range = (start, end, step = 1, isRight = false) => {
     const arr = [];
     console.log(`start: ${startVal}, end: ${endVal}, step: ${stepVal}`);
     for (
-        let i = !isRight ? startVal : startVal >= 0 ? startVal - stepVal : startVal + stepVal;
+        let i = !isRight
+            ? startVal
+            : startVal >= 0
+            ? startVal - stepVal
+            : startVal + Math.abs(stepVal);
         !isRight
             ? endVal > 0
                 ? i < endVal
@@ -23,11 +27,11 @@ const range = (start, end, step = 1, isRight = false) => {
                 : (i += stepVal)
             : startVal > 0
             ? (i -= stepVal)
-            : (i += stepVal)
+            : (i += Math.abs(stepVal))
     ) {
         arr.push(step ? i : 1);
     }
     return arr;
 };
 
-export default (start, end, step) => range(start, end, step, true);
+export default (start, end, step) => range(start, end, step, false);
