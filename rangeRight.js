@@ -5,9 +5,25 @@ const range = (start, end, step = 1, isRight = false) => {
     const arr = [];
     console.log(`start: ${startVal}, end: ${endVal}, step: ${stepVal}`);
     for (
-        let i = startVal;
-        endVal > 0 ? i < endVal : i > endVal;
-        endVal < 0 && stepVal > 0 ? (i -= stepVal) : (i += stepVal)
+        let i = !isRight ? startVal : startVal >= 0 ? startVal - stepVal : startVal + stepVal;
+        !isRight
+            ? endVal > 0
+                ? i < endVal
+                : i > endVal
+            : startVal >= 0
+            ? i >= endVal
+            : i <= endVal;
+        !isRight
+            ? endVal <= 0 && stepVal > 0
+                ? (i -= stepVal)
+                : (i += stepVal)
+            : endVal <= 0 && stepVal > 0
+            ? startVal > 0
+                ? (i -= stepVal)
+                : (i += stepVal)
+            : startVal > 0
+            ? (i -= stepVal)
+            : (i += stepVal)
     ) {
         arr.push(step ? i : 1);
     }
