@@ -1,1 +1,1 @@
-import test from './range.js';
+import test from './rangeRight.js';

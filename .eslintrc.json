@@ -15,6 +15,7 @@
             {
                 "js": "ignorePackages"
             }
-        ]
+        ],
+        "no-param-reassign": ["error", { "props": false }]
     }
 }

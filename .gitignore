@@ -1,1 +1,7 @@
+*.code-workspace
+
+# JS stuff
 node_modules/*
+
+# Temp
+simple-bubble-sort/*
