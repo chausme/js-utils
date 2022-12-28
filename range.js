@@ -1,11 +1,14 @@
-export default (end, start = 0, step = 1) => {
+export default (start, end, step = 1, isRight = false) => {
+    const startVal = !end ? 0 : start;
+    const endVal = !end ? start : end;
+    const stepVal = !step ? 1 : step;
     const arr = [];
     for (
-        let i = start;
-        end > 0 ? i < end : i > end;
-        end < 0 && step > 0 ? (i -= step ? step : 1) : (i += step ? step : 1) // check step to handle 0 value
+        let i = startVal;
+        endVal > 0 ? i < endVal : i > endVal;
+        endVal < 0 && stepVal > 0 ? (i -= stepVal) : (i += stepVal)
     ) {
-        arr.push(!step ? 1 : i);
+        arr.push(step ? i : 1);
     }
-    return arr;
+    return isRight ? arr.reverse() : arr;
 };
